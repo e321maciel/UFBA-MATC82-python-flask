@@ -157,4 +157,10 @@ $ echo __pycache__ >> .gitignore
 * runtime
 * Retirar pgkresources do requirements.txt
 
-> **Bônus: ** HEROKU como Continous Integration
+> **Bônus:** HEROKU como Continous Integration
+
+### 11 - API REST
+
+* Apenas rota / retorna view
+* Todos os métodos apenas recebem dados
+* Todos os métodos respondem json

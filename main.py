@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, make_response, jsonify
 from mongoengine import connect
+from bson import json_util
 from task import Task
 import os, configparser
 
@@ -55,6 +56,47 @@ def edit(id):
 	Task.objects(pk=id).update_one(title=title, priority=priority, duedate=duedate)
 
 	return redirect('/')
+
+# API REST
+
+@app.route('/api/tasks', methods=['GET'])
+def getTasks():
+	tasks = json_util.dumps(Task.objects(complete=False, deleted=False).to_json())
+
+	return jsonify({'tasks': tasks})
+
+@app.route('/api/tasks', methods=['POST'])
+def createTask():
+	title = request.json['title']
+	priority = request.json['priority']
+	duedate = request.json['duedate']
+
+	task = Task(title=title, priority=priority, duedate=duedate, complete=False, deleted=False)
+	task.save()
+
+	return make_response(jsonify({'status': 'success', 'message': 'Task criada com sucesso!'}), 200)
+
+@app.route('/api/tasks/<id>', methods=['DELETE'])
+def deleteTask(id):
+	Task.objects(pk=id).update_one(deleted=True)
+
+	return make_response(jsonify({'status': 'success', 'message': 'Task apagada com sucesso!'}), 200)
+
+@app.route('/api/tasks/<id>', methods=['PATCH'])
+def markCompleteTask(id):
+	Task.objects(pk=id).update_one(complete=True)
+
+	return make_response(jsonify({'status': 'success', 'message': 'Task marcada como feita!'}), 200)
+
+@app.route('/api/tasks/<id>', methods=['PUT'])
+def editTask(id):
+	title = request.json['title']
+	priority = request.json['priority']
+	duedate = request.json['duedate']
+
+	Task.objects(pk=id).update_one(title=title, priority=priority, duedate=duedate)
+
+	return make_response(jsonify({'status': 'success', 'message': 'Task editada com sucesso!'}), 200)
 
 if __name__ == '__main__':
 	port = int(os.getenv('PORT',8080))
