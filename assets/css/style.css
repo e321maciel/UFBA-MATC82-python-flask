@@ -1,0 +1,12 @@
+body {
+	background: #fff;
+}
+
+.love {
+	color: #ED5643;
+}
+
+.copyleft {
+	display: inline-block;
+	transform: rotate(180deg);
+}

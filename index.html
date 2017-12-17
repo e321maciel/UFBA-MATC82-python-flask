@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task list</title>
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/gaintime.min.css">
+	<link rel="stylesheet" href="assets/css/datatables.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){$('#list').DataTable();});
+	</script>
+</head>
+<body class="panel">
+	<header class="gt-top-menu xs-left">
+		<label class="menu-toggle">
+		    <svg viewBox="0 0 24 24">
+		    	<path fill="#333" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path>
+		    </svg>
+		</label>
+		<nav>
+			<ul>
+				<li data-modal="modal-create"><i class="fa fa-plus" aria-hidden="true"></i> New</li>
+				<li data-modal="modal-about"><i class="fa fa-info" aria-hidden="true"></i> About</li>
+			</ul>
+		</nav>
+	</header>
+	<main class="first">
+		<section class="container">
+			<div class="gt-modal">
+				<div id="modal-about" class="modal">
+					<button class="modal-close" type="button">x</button>
+					<div class="modal-body">
+						<h1>Componentes usados nessa página:</h1>
+						<ul>
+							<li><a href="https://gaintime.github.io/">GainTime</a></li>
+							<li><a href="http://fontawesome.io/">Font Awesome</a></li>
+							<li><a href="https://datatables.net/">DataTables</a></li>
+							<li><a href="https://jquery.com/">jQuery</a></li>
+							<li><a href="http://flask.pocoo.org/">Flask</a></li>
+							<li><a href="https://github.com/">Github</a></li>
+							<li><a href="https://mlab.com/">MongoLab</a></li>
+							<li><a href="https://www.heroku.com/">Heroku</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="gt-modal">
+				<div id="modal-create" class="modal">
+					<button class="modal-close" type="button">x</button>
+					<div class="modal-body">
+						<h1>Create new task</h1>
+						<form action="" class="gt-form">
+							<input type="text" placeholder="Task description" name="title">
+							<input type="number" placeholder="5" name="priority" data-validate="num">
+							<input type="date" name="duedate" placeholder="20-12-2017">
+
+							<button type="submit" class="btn">Create!</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<table class="gt-table striped hovered" id="list">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Priority</th>
+						<th>Due date</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-center">Test</td>
+						<td class="text-center">5</td>
+						<td class="text-center">10/01/2018</td>
+						<td class="text-center">
+							<button class="btn success"><i class="fa fa-check" aria-hidden="true"></i></button>
+							<button class="btn warning" data-modal="111"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="btn danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center">Tested</td>
+						<td class="text-center">10</td>
+						<td class="text-center">10/01/2017</td>
+						<td class="text-center">
+							<button class="btn success"><i class="fa fa-check" aria-hidden="true"></i></button>
+							<button class="btn warning" data-modal="123"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="btn danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center">Testing</td>
+						<td class="text-center">0</td>
+						<td class="text-center">10/01/2020</td>
+						<td class="text-center">
+							<button class="btn success"><i class="fa fa-check" aria-hidden="true"></i></button>
+							<button class="btn warning" data-modal="321"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="btn danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<div class="gt-modal">
+			<div id="111" class="modal">
+				<button class="modal-close" type="button">x</button>
+				<div class="modal-body">
+					<h1>Edit task</h1>
+					<form action="" class="gt-form">
+						<input type="text" placeholder="Task description" name="title" value="Test">
+						<input type="number" placeholder="5" name="priority" data-validate="num" value="5">
+						<input type="date" name="duedate" value="2018-10-01">
+
+						<button type="submit" class="btn">Edit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="gt-modal">
+			<div id="123" class="modal">
+				<button class="modal-close" type="button">x</button>
+				<div class="modal-body">
+					<h1>Edit task</h1>
+					<form action="" class="gt-form">
+						<input type="text" placeholder="Task description" name="title" value="Tested">
+						<input type="number" placeholder="5" name="priority" data-validate="num" value="10">
+						<input type="date" name="duedate" value="2017-10-01">
+
+						<button type="submit" class="btn">Edit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="gt-modal">
+			<div id="321" class="modal">
+				<button class="modal-close" type="button">x</button>
+				<div class="modal-body">
+					<h1>Edit task</h1>
+					<form action="" class="gt-form">
+						<input type="text" placeholder="Task description" name="title" value="Testing">
+						<input type="number" placeholder="5" name="priority" data-validate="num" value="0">
+						<input type="date" name="duedate" value="2020-10-01">
+
+						<button type="submit" class="btn">Edit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="text-center">
+		Made with <i class="fa fa-heart love" aria-hidden="true"></i>
+		<br>
+		<span class="copyleft">&copy;</span> 
+	</footer>
+
+	<script type="text/javascript" src="assets/js/gaintime.min.js"></script>
+</body>
+</html>
