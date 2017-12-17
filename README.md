@@ -128,3 +128,9 @@ $ pip freeze > requirements.txt
 ~~~
 $ echo __pycache__ >> .gitignore
 ~~~
+
+### 06 - Read
+
+* Fazer consulta dos dados
+* Passar dados para o template
+* Renderizar informações no front

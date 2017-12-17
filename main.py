@@ -19,7 +19,9 @@ app.debug = True
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	tasks = Task.objects(complete=False, deleted=False)
+
+	return render_template('index.html', tasks=tasks)
 
 @app.route('/create', methods=['POST'])
 def create():
