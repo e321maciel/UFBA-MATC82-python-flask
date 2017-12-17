@@ -99,3 +99,20 @@ $ pip freeze > requirements.txt
 * Mover assets para static
 * Inserir na template index.html via static
 * Renderizar o template
+
+### 04 - Ambiente - Mongo
+
+* Criar banco no MongoLabs
+* Instalar `mongoengine`:
+
+~~~
+$ pip install mongoengine
+$ pip freeze > requirements.txt
+~~~
+
+* Conectar!
+
+> **Boas práticas**:
+> * Env config file
+> * Excluir do git
+> * Ler no código
