@@ -150,3 +150,9 @@ $ echo __pycache__ >> .gitignore
 * Editar formulário
   * Se atentar ao método de envio
 * Construir método de edição
+
+### 10 - Heroku
+
+* Procfile
+* runtime
+* Retirar pgkresources do requirements.txt
