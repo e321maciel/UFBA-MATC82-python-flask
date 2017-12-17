@@ -34,6 +34,12 @@ def create():
 
 	return redirect('/')
 
+@app.route('/delete/<id>')
+def delete(id):
+	Task.objects(pk=id).update_one(deleted=True)
+
+	return redirect('/')
+
 if __name__ == '__main__':
 	port = int(os.getenv('PORT',8080))
 	host = os.getenv('IP', '0.0.0.0')

@@ -134,3 +134,8 @@ $ echo __pycache__ >> .gitignore
 * Fazer consulta dos dados
 * Passar dados para o template
 * Renderizar informações no front
+
+### 07 - Delete
+
+* Criar método para deletar
+* Editar formulário

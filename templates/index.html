@@ -84,7 +84,7 @@
 						<td class="text-center">
 							<button class="btn success"><i class="fa fa-check" aria-hidden="true"></i></button>
 							<button class="btn warning" data-modal="{{ item.id }}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-							<button class="btn danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<a href="/delete/{{ item.id }}" class="btn danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
 						</td>
 					</tr>
 					{% endfor %}
