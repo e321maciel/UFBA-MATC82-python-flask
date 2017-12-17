@@ -144,3 +144,9 @@ $ echo __pycache__ >> .gitignore
 
 * Criar método para marcar como completo
 * Editar formulário
+
+### 09 - Edit
+
+* Editar formulário
+  * Se atentar ao método de envio
+* Construir método de edição

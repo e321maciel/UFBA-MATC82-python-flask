@@ -97,7 +97,7 @@
 				<button class="modal-close" type="button">x</button>
 				<div class="modal-body">
 					<h1>Edit task - {{ item.id }}</h1>
-					<form action="" class="gt-form">
+					<form action="/edit/{{ item.id }}" method="POST" class="gt-form">
 						<input type="text" name="title" value="{{ item.title }}">
 						<input type="number" name="priority" data-validate="num" value="{{ item.priority }}">
 						<input type="date" name="duedate" value="{{ item.duedate.strftime('%Y-%m-%d') }}">

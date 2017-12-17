@@ -46,6 +46,16 @@ def complete(id):
 
 	return redirect('/')
 
+@app.route('/edit/<id>', methods=['POST'])
+def edit(id):
+	title = request.form['title']
+	priority = request.form['priority']
+	duedate = request.form['duedate']
+
+	Task.objects(pk=id).update_one(title=title, priority=priority, duedate=duedate)
+
+	return redirect('/')
+
 if __name__ == '__main__':
 	port = int(os.getenv('PORT',8080))
 	host = os.getenv('IP', '0.0.0.0')
