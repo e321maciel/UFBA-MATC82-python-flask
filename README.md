@@ -115,4 +115,16 @@ $ pip freeze > requirements.txt
 > **Boas práticas**:
 > * Env config file
 > * Excluir do git
-> * Ler no código
+> * Ler no 
+
+
+### 05 - Create
+
+* Editar formulário
+* Criar entidade Task
+* Criar método create
+* Aumentar .gitignore
+
+~~~
+$ echo __pycache__ >> .gitignore
+~~~
