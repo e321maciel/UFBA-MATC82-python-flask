@@ -40,6 +40,12 @@ def delete(id):
 
 	return redirect('/')
 
+@app.route('/complete/<id>')
+def complete(id):
+	Task.objects(pk=id).update_one(complete=True)
+
+	return redirect('/')
+
 if __name__ == '__main__':
 	port = int(os.getenv('PORT',8080))
 	host = os.getenv('IP', '0.0.0.0')

@@ -139,3 +139,8 @@ $ echo __pycache__ >> .gitignore
 
 * Criar método para deletar
 * Editar formulário
+
+### 08 - Mark Complete
+
+* Criar método para marcar como completo
+* Editar formulário

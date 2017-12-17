@@ -82,7 +82,7 @@
 						<td class="text-center">{{ item.priority }}</td>
 						<td class="text-center">{{ item.duedate.strftime('%Y-%m-%d') }}</td>
 						<td class="text-center">
-							<button class="btn success"><i class="fa fa-check" aria-hidden="true"></i></button>
+							<a href="/complete/{{ item.id }}" class="btn success"><i class="fa fa-check" aria-hidden="true"></i></a>
 							<button class="btn warning" data-modal="{{ item.id }}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 							<a href="/delete/{{ item.id }}" class="btn danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
 						</td>
