@@ -156,3 +156,5 @@ $ echo __pycache__ >> .gitignore
 * Procfile
 * runtime
 * Retirar pgkresources do requirements.txt
+
+> **Bônus: ** HEROKU como Continous Integration
