@@ -91,3 +91,11 @@ Gerenciamento de dependências:
 ~~~
 $ pip freeze > requirements.txt
 ~~~
+
+### 03 - Template Index
+
+* Criar pasta templates
+* Mover index.html para templates
+* Mover assets para static
+* Inserir na template index.html via static
+* Renderizar o template
