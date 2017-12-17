@@ -55,3 +55,39 @@ Todas essas funcionalidades na tabela de listagem das opções são feitas com e
 #### jQuery
 
 A princípio entrou por ser dependência do DataTables, mas posteriormente iremos utilizar mais ele.
+
+### 02 - Ambiente - Flask
+
+Primeiramente, vamos atualizar o sistema:
+
+~~~
+$ sudo apt update
+~~~
+
+Depois, instalar virtual enviroment do Python:
+
+~~~
+$ sudo apt install python-virtualenv -y
+~~~
+
+Criar ambiente virtual:
+
+~~~
+$ virtualenv -p `which python3` venv
+$ echo venv >> .gitignore
+$ source venv/bin/activate
+~~~
+
+Instalar Flask:
+
+~~~
+$ pip install Flask
+~~~
+
+* Hello world com Flask!
+
+Gerenciamento de dependências:
+
+~~~
+$ pip freeze > requirements.txt
+~~~
